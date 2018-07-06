@@ -1,0 +1,21 @@
+{
+  "name": "starter-node-angular",
+  "main": "server.js",
+  "dependencies": {
+    "@sendgrid/mail": "^6.2.1",
+    "angular-aria": "^1.6.9",
+    "angular-material": "^1.1.8",
+    "angular-messages": "^1.6.9",
+    "angular-state-loader": "^0.3.0",
+    "angular-ui-validate": "^1.2.3",
+    "async": "^2.6.0",
+    "body-parser": "latest",
+    "express": "latest",
+    "mailgun-js": "latest",
+    "method-override": "latest",
+    "mongoose": "latest",
+    "sendgrid": "^5.2.3",
+    "textangular": "^1.5.16",
+    "unirest": "latest"
+  }
+}

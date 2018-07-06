@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html ng-cloak ng-app="Cartisan">
+<head>
+
+	<title>Car Repais</title>
+	<link rel="stylesheet" href="dist/css/bootstrap/dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cute+Font|Hi+Melody" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="dist/css/main.css">
+</head>
+<body ng-controller="BodyController as BodyCtrl" ng-cloak>
+
+<div class="overlay" window-height></div>
+
+
+
+<div  ng-cloak class="container second-cont" set-height ng-show="!BodyCtrl.showMessage">
+  <div class="jumbotron" style="background-color: transparent;"><img src="Images/cartisan.png"></div>
+<div>
+
+    <div  ng-cloak class=" col-12">
+        <div  ng-cloak id="logbox">
+            <form  ng-cloak id="signup" ng-submit="BodyCtrl.submit()" novalidate name="VehicleRepairData">
+				 <input name="name" ng-model="BodyCtrl.name" type="text" placeholder="Name" class="input pass" required />
+                <input  ng-cloak ng-model="BodyCtrl.phone" name="phone" type="tel" placeholder="Phone Number" required class="input pass" 
+                ng-minlength="10" ng-maxlength="10" required autocomplete="off"/>
+                <input  ng-cloak ng-model="BodyCtrl.email" name="email" type="email" placeholder="Email" required class="input pass" required  />
+                <input  ng-cloak ng-model="BodyCtrl.vehicleModel" name="model" type="text" placeholder="vehicle model" required class="input pass" required  />
+                <input  ng-cloak ng-model="BodyCtrl.description" name="description" type="textarea" placeholder="Description" required class="input pass" required  />
+                 <div class="file-div">
+                 Choose Files
+             <input type="file" ng-model-instant onchange='angular.element(this).scope().BodyCtrl.imageUpload(event)' multiple name="photos" class="hide_file">
+                </div>
+                <ul class="names-list" ng-show="BodyCtrl.filesUploaded">
+                  <li class="image-names" ng-repeat="name in BodyCtrl.imageFileNames">{{name}}</li>
+                </ul>
+                <div>
+                <button ng-disabled="VehicleRepairData.$invalid" ng-cloak class="inputButton"/> SUBMIT </button>
+              </div>
+              
+            </form>
+        </div>
+    </div>
+    <!--col-md-6-->
+
+
+</div>
+</div>
+
+
+
+<div ng-cloak class="container second-cont thank-you"  set-height ng-show="BodyCtrl.showMessage">
+        <div ng-cloak class="jumbotron" style="background-color: transparent;">
+          <h1 ng-cloak style="font-weight:bold;color:white;">Thanks</h1>
+          <h1 ng-cloak style="color: white;"> We will get back to you with an estimate </h1>
+        <button ng-cloak  class="inputButton" ng-click="BodyCtrl.HideandClear()">Done</button>
+        
+
+        </div>
+
+
+</div>
+
+
+</body>
+ <script type="text/javascript" src="dist/js/lib/angular.min.js"></script>
+<script type="text/javascript" src="dist/js/MainCtrl.js"></script>
+<script type="text/javascript" src="dist/js/Controllers/BodyController.js"></script>
+<script type="text/javascript" src="dist/js/Services/MultipleImageUploadService.js"></script>
+<script type="text/javascript" src="dist/js/Services/VehicleRepairDataUploadService.js"></script>
+<script type="text/javascript" src="dist/js/directives/setHeight.js"></script>
+<script type="text/javascript" src="dist/js/directives/setHeightasWindowHeight.js"></script>
+
+<script type="text/javascript" src="dist/js/directives/tickMark.js"></script>
+
+</html>
